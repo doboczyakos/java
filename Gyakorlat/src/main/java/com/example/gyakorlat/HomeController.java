@@ -1,6 +1,7 @@
 package com.example.gyakorlat;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,10 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+import java.time.LocalDateTime;
+
 @Controller
 public class HomeController {
     @Autowired
     private UserRepo userRepository;
+
+    @Autowired
+    private MessageRepo messageRepository;
 
     @GetMapping("/")
     public String index(HttpSession session, Model model) {
@@ -82,6 +89,36 @@ public class HomeController {
         model.addAttribute("viewName", "contact");
         model.addAttribute("user", null);
         model.addAttribute("page", "contact");
+        return "layout";
+    }
+
+    @PostMapping("/contact")
+    public String sendMessage(
+            @RequestParam("message") String messageText,
+            Principal principal,
+            Model model) {
+        model.addAttribute("pageTitle", "Kapcsolat");
+        model.addAttribute("viewName", "contact");
+        model.addAttribute("user", null);
+        model.addAttribute("page", "contact");
+
+        try {
+            if (messageText.length() < 10) {
+                model.addAttribute("error", "Legalább 10 karakter hosszú üzenetet kell megadni!");
+                return "layout";
+            }
+
+            Message message = new Message();
+            message.setSender(principal != null ? principal.getName() : "");
+            message.setText(messageText);
+            message.setSendDateTime(LocalDateTime.now());
+
+            messageRepository.save(message);
+        } catch (Exception e) {
+            model.addAttribute("error", "Hiba történt az üzenetküldés során!");
+        }
+
+        model.addAttribute("success", "Az üzenet sikeresen elküldve");
         return "layout";
     }
 }
