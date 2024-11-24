@@ -75,4 +75,13 @@ public class HomeController {
             return "layout";
         }
     }
+
+    @GetMapping("/contact")
+    public String contact(Model model) {
+        model.addAttribute("pageTitle", "Kapcsolat");
+        model.addAttribute("viewName", "contact");
+        model.addAttribute("user", null);
+        model.addAttribute("page", "contact");
+        return "layout";
+    }
 }
