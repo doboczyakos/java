@@ -24,6 +24,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#services" th:classappend="${page == 'services' ? 'active' : ''}">Szolgáltatások</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register" th:classappend="${page == 'register' ? 'active' : ''}">Regisztráció</a>
+                </li>
             </ul>
             <div sec:authorize="isAuthenticated()">
                 <span class="navbar-text me-2">Üdv, <strong sec:authentication="principal.username"></strong>!</span>
