@@ -5,7 +5,7 @@
     <TableView fx:id="table">
         <columns>
             <TableColumn text="Igény" fx:id="igenyColumn"/>
-            <TableColumn text="Szolgáltatás" fx:id="szolgColumn"/>
+            <TableColumn text="Szolgáltatás" fx:id="szolgColumn" minWidth="540"/>
             <TableColumn text="Mennyiség" fx:id="mennyisegColumn"/>
         </columns>
     </TableView>

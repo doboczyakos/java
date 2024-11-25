@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.Read2Controller" spacing="10" alignment="TOP_LEFT">
+    <children>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Szűrő: " />
+            <TextField fx:id="filterText" promptText="Keresett szöveg" />
+            <ComboBox fx:id="szolgaltatasComboBox" promptText="Válasszon szolgáltatást" />
+            <fx:define><ToggleGroup fx:id="mennyisegToggleGroup" /></fx:define>
+            <RadioButton text="1" toggleGroup="$mennyisegToggleGroup" />
+            <RadioButton text="2" toggleGroup="$mennyisegToggleGroup" />
+            <RadioButton text="3" toggleGroup="$mennyisegToggleGroup" />
+            <RadioButton text="4" toggleGroup="$mennyisegToggleGroup" />
+            <RadioButton text="5" toggleGroup="$mennyisegToggleGroup" />
+            <CheckBox fx:id="checkBoxMoreThan5" text="Csak 5-nél több" />
+            <Button text="Szűrés" onAction="#applyFilter" />
+        </HBox>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn text="Igény" fx:id="igenyColumn"/>
+                <TableColumn text="Szolgáltatás" fx:id="szolgColumn" minWidth="540"/>
+                <TableColumn text="Mennyiség" fx:id="mennyisegColumn"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

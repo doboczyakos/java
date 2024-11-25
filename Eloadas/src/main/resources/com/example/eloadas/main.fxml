@@ -5,6 +5,7 @@
     <MenuBar>
         <Menu text="Adatbázis">
             <MenuItem text="Olvas" onAction="#loadReadView"/>
+            <MenuItem text="Olvas2" onAction="#loadRead2View" />
             <MenuItem text="Ír" onAction="#loadCreateView"/>
             <MenuItem text="Módosít" onAction="#loadUpdateView"/>
             <MenuItem text="Töröl" onAction="#loadDeleteView"/>

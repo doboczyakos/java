@@ -16,6 +16,11 @@ public class MainController {
     }
 
     @FXML
+    private void loadRead2View() throws Exception {
+        loadView("read2.fxml");
+    }
+
+    @FXML
     private void loadCreateView() throws Exception {
         loadView("create.fxml");
     }
