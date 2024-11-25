@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.UpdateController" spacing="10" alignment="CENTER">
+    <Label text="Rekord módosítása a Lakig táblában" />
+    <HBox spacing="10">
+        <Label text="Rekord ID:" minWidth="200" />
+        <ComboBox fx:id="recordComboBox" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Szolgáltatás:" minWidth="200" />
+        <ComboBox fx:id="szolgaltatasComboBox" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Igény dátuma:" minWidth="200" />
+        <DatePicker fx:id="igenyField" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Mennyiség:" minWidth="200" />
+        <TextField fx:id="mennyisegField" />
+    </HBox>
+    <Button text="Módosítás" onAction="#updateRecord" />
+</VBox>
