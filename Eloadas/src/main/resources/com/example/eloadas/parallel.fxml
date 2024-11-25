@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.ParallelController">
+    <Label text="Párhuzamos szövegfrissítés"/>
+    <Button fx:id="startButton" text="Indítás" onAction="#onStartButtonClicked"/>
+    <Button fx:id="stopButton" text="Leállítás" onAction="#onStopButtonClicked" visible="false"/>
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="label1" text="Label 1"/>
+        <Label fx:id="label2" text="Label 2"/>
+    </HBox>
+</VBox>

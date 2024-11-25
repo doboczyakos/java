@@ -10,6 +10,9 @@
             <MenuItem text="Módosít" onAction="#loadUpdateView"/>
             <MenuItem text="Töröl" onAction="#loadDeleteView"/>
         </Menu>
+        <Menu text="Párhuzamos">
+            <MenuItem text="Párhuzamos" onAction="#loadParallelView"/>
+        </Menu>
     </MenuBar>
     <StackPane fx:id="contentPane">
         <Label text="Válasszon egy funkciót a menüből" />

@@ -35,6 +35,11 @@ public class MainController {
         loadView("delete.fxml");
     }
 
+    @FXML
+    private void loadParallelView() throws Exception {
+        loadView("parallel.fxml");
+    }
+
     private void loadView(String fxml) throws Exception {
         Node view = FXMLLoader.load(getClass().getResource(fxml));
         contentPane.getChildren().setAll(view);
