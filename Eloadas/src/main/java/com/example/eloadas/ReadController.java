@@ -12,8 +12,6 @@ import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 public class ReadController {
 

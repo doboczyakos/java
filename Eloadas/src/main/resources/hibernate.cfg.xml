@@ -7,6 +7,7 @@
         <property name="dialect">org.sqlite.hibernate.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
         <property name="connection.url">jdbc:sqlite:/d:/tmp/java/hazi/Eloadas/DB/Eloadas.db</property>
+        <property name="hibernate.connection.date_class">TEXT</property>
         <mapping class="com.example.eloadas.hulladekSzallitas.Lakig"/>
         <mapping class="com.example.eloadas.hulladekSzallitas.Naptar"/>
         <mapping class="com.example.eloadas.hulladekSzallitas.Szolgaltatas"/>
