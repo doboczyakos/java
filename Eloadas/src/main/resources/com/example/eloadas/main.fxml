@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eloadas.MainController">
+    <MenuBar>
+        <Menu text="Adatbázis">
+            <MenuItem text="Olvas" onAction="#loadReadView"/>
+            <MenuItem text="Ír" onAction="#loadCreateView"/>
+            <MenuItem text="Módosít" onAction="#loadUpdateView"/>
+            <MenuItem text="Töröl" onAction="#loadDeleteView"/>
+        </Menu>
+    </MenuBar>
+    <StackPane fx:id="contentPane">
+        <Label text="Válasszon egy funkciót a menüből" />
+    </StackPane>
+</VBox>
