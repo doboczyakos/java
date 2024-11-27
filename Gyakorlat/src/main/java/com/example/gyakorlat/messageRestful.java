@@ -1,11 +1,6 @@
 package com.example.gyakorlat;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import javax.swing.text.html.Option;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -28,6 +23,7 @@ class messageRestful {
 
     @PostMapping("/restAdd")
     Message addMessage(@RequestBody Message message){
+        message.setSendDateTime(LocalDateTime.now());
         return messageRepo.save(message);
     }
 
@@ -36,8 +32,8 @@ class messageRestful {
         return messageRepo.findById(Math.toIntExact(id))
                 .map(a -> {
                     a.setText(message.getText());
-                    a.setText(message.getSender());
-                    a.setSendDateTime(message.getSendDateTime());
+                    a.setSender(message.getSender());
+                    a.setSendDateTime(LocalDateTime.now());
                     return messageRepo.save(a);
                 })
                 .orElseGet(() -> {
