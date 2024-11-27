@@ -40,21 +40,6 @@ public class MainController {
         loadView("parallel.fxml");
     }
 
-    @FXML
-    private void loadDown1View() throws Exception {
-        loadView("down1.fxml");
-    }
-
-    @FXML
-    private void loadDown2View() throws Exception {
-        loadView("down2.fxml");
-    }
-
-    @FXML
-    private void loadGrafView() throws Exception {
-        loadView("graf.fxml");
-    }
-
     private void loadView(String fxml) throws Exception {
         Node view = FXMLLoader.load(getClass().getResource(fxml));
         contentPane.getChildren().setAll(view);
