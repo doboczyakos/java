@@ -26,16 +26,17 @@ public class AdminController {
     }
 
     String getAllMessages(){
-        String str="";
+        String str="<table style='border-spacing: 5px;'><tr><th>Felhasználó</th><th>Üzenet</th><th>Dátum és idő</th></tr>";
         for(Message message: messageRepo.findByOrderBySendDateTimeDesc()){
+            str+="<tr><td class='card-text'>";
             if(message.getSender().isEmpty()){
                 str+="Vendég";
             }else{
                 str+=message.getSender();
             }
-            //str+=" ; "+message.getText()+" ; "+message.getSendDateTime().toLocalDate()+" "+message.getSendDateTime().toLocalTime()+"<br>";
-            str+=" ; "+message.getText()+" ; "+message.getSendDateTime().format(DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss" ))+"<br>";
+            str+="</td><td>"+message.getText()+"</td><td>"+message.getSendDateTime().format(DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss" ))+"</td></tr>";
         }
+        str+="</table>";
         return str;
     }
 }
