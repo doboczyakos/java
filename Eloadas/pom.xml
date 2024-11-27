@@ -60,13 +60,19 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>2.3.3</version>
+            <version>4.0.1</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.3</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>4.0.4</version>
         </dependency>
 
         <dependency>
@@ -88,11 +94,19 @@
             <artifactId>jaxws-maven-plugin</artifactId>
             <version>2.3.2</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.metro</groupId>-->
-<!--            <artifactId>webservices-rt</artifactId>-->
-<!--            <version>2.3.1</version>-->
-<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.glassfish.metro</groupId>
+            <artifactId>webservices-rt</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -145,7 +159,7 @@
                     </wsdlUrls>
                     <packageName>MNBSoap</packageName>
                     <sourceDestDir>
-                        ${project.build.directory}/generated-sources/
+                        ${project.basedir}/src/main/java
                     </sourceDestDir>
                 </configuration>
             </plugin>
