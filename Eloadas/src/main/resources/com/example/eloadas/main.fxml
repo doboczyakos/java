@@ -13,6 +13,11 @@
         <Menu text="Párhuzamos">
             <MenuItem text="Párhuzamos" onAction="#loadParallelView"/>
         </Menu>
+        <Menu text="Soap Kliens">
+            <MenuItem text="Letöltés" onAction="#loadDown1View"/>
+            <MenuItem text="Letöltés2" onAction="#loadDown2View"/>
+            <MenuItem text="Grafikon" onAction="#loadGrafView"/>
+        </Menu>
     </MenuBar>
     <StackPane fx:id="contentPane">
         <Label text="Válasszon egy funkciót a menüből" />
