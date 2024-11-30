@@ -14,6 +14,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.Calendar;
+
 public class openController {
     static Context ctx;
     static AccountID accountId;
@@ -25,7 +27,8 @@ public class openController {
                     "EUR_USD",
                     "USD_JPY",
                     "GBP_USD",
-                    "USD_CHF"
+                    "USD_CHF",
+                    "AUD_CHF"
             );
     @FXML
     private ComboBox devizaParok;
@@ -43,11 +46,19 @@ public class openController {
 
     @FXML
     public void openPosition() {
-        ctx = new
-                ContextBuilder(config.URL).setToken(config.TOKEN).setApplication("StepByStepOrder").build();
-        accountId = config.ACCOUNTID;
+        Calendar calendar = Calendar.getInstance();
+        int today = calendar.get(Calendar.DAY_OF_WEEK);
+        if(today != Calendar.SATURDAY && today != Calendar.SUNDAY) {
 
-        open(devizaParok.getValue().toString(),Integer.parseInt(amount.getText()));
+
+            ctx = new
+                    ContextBuilder(config.URL).setToken(config.TOKEN).setApplication("StepByStepOrder").build();
+            accountId = config.ACCOUNTID;
+
+            open(devizaParok.getValue().toString(), Integer.parseInt(amount.getText()));
+        }else{
+            result.setText("Jelenleg hétvége van. Nem lehet kereskedni!");
+        }
     }
 
     void open(String instrumentInput,int amount){
