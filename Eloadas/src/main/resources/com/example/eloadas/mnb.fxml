@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.mnbController" spacing="10" alignment="CENTER">
+    <HBox spacing="10">
+        <Button fx:id="letoltes" onAction="#letoltes1" text="Letoltes 1"></Button>
+    </HBox>
+    <HBox spacing="10">
+        <ComboBox fx:id="devizaParok" layoutX="15.0" layoutY="33.0" prefWidth="150.0" promptText="Válasszon"/>
+        <DatePicker fx:id="startDatePicker" promptText="Kezdő idő"></DatePicker>
+        <DatePicker fx:id="startEndPicker" promptText="Záró idő"></DatePicker>
+        <Button fx:id="letoltes2" onAction="#letoltes2" text="Letoltes 2"></Button>
+    </HBox>
+    <HBox spacing="10">
+        <Button fx:id="graf" onAction="#graf" text="Grafikon"></Button>
+
+        <LineChart fx:id="devizaChart" layoutX="14.0" layoutY="52.0" prefHeight="512.0" prefWidth="887.0" title="Deviza">
+            <xAxis>
+                <NumberAxis side="BOTTOM" fx:id="xAxis" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" autoRanging="true" fx:id="yAxis" />
+            </yAxis>
+        </LineChart>
+    </HBox>
+</VBox>
+
