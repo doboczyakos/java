@@ -1,0 +1,18 @@
+CREATE TABLE naptar (
+    azon INTEGER PRIMARY KEY AUTOINCREMENT,
+    datum TEXT NOT NULL,
+    szolgid INTEGER NOT NULL
+);
+
+CREATE TABLE lakig (
+    azon INTEGER PRIMARY KEY AUTOINCREMENT,
+    igeny TEXT NOT NULL,
+    szolgid INTEGER NOT NULL,
+    mennyiseg INTEGER NOT NULL
+);
+
+CREATE TABLE szolgaltatas (
+    id INTEGER PRIMARY KEY,
+    tipus TEXT NOT NULL,
+    jelentes TEXT NOT NULL
+);

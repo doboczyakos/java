@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.devizaOldController">
+    <Label text="Deviza Párok"/>
+    <ComboBox fx:id="devizaParok" onAction="#comboChange" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="Válasszon"/>
+    <DatePicker fx:id="startDate" promptText="Kezdő idő" onAction="#setStarDate"></DatePicker>
+    <DatePicker fx:id="endDate" promptText="Záró idő" onAction="#setEndDate"></DatePicker>
+
+    <Label fx:id="devizaSelectorLabel" layoutX="15.0" layoutY="10.0" styleClass="bold-label" text="Deviza pár" />
+
+    <TextArea fx:id="eladas" layoutX="15.0" layoutY="10.0" maxHeight="300" styleClass="bold-label" text=""/>
+
+    <Button fx:id="oandaTest" text="Válasszon" onAction="#loadDevizaPar"/>
+
+    <LineChart fx:id="devizaChart" layoutX="14.0" layoutY="52.0" prefHeight="512.0" prefWidth="887.0" title="Deviza">
+        <xAxis>
+            <NumberAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis side="LEFT" autoRanging="true" fx:id="yAxis" />
+        </yAxis>
+    </LineChart>
+
+</VBox>

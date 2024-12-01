@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.openController">
+    <Label text="Pozició Nyitás"/>
+
+    <ComboBox fx:id="devizaParok" layoutX="15.0" layoutY="33.0" prefWidth="150.0" promptText="Válasszon"/>
+    <Label text="Mennyiség"/> <TextField fx:id="amount" text=""></TextField>
+    <Button fx:id="pozOpen" text="Mehet" onAction="#openPosition"/>
+    <Label text="" fx:id="result"/>
+</VBox>

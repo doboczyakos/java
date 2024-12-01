@@ -6,10 +6,16 @@
 <div class="container w-50 mt-5" th:fragment="content">
     <h2 class="text-center">Kapcsolat</h2>
     <p class="text-center">Lépjen kapcsolatba velünk az alábbi űrlap segítségével.</p>
-    <form class="mx-auto" style="max-width: 600px;">
+    <form action="/contact" method="post" class="mx-auto">
         <div class="mb-3">
             <label for="message" class="form-label">Üzenet</label>
-            <textarea class="form-control" id="message" rows="3" placeholder="Írja meg üzenetét" required></textarea>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Írja meg üzenetét" required></textarea>
+        </div>
+        <div th:if="${error != null}">
+            <div class="alert alert-danger" th:text="${error}"></div>
+        </div>
+        <div th:if="${success != null}">
+            <div class="alert alert-success" th:text="${success}"></div>
         </div>
         <button type="submit" class="btn btn-primary">Küldés</button>
     </form>

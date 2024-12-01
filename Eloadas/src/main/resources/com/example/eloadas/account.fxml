@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.eloadas.oandaController">
+    <Label text="Számla adatok"/>
+    <TableView fx:id="table" layoutX="35.0" layoutY="28.0" prefHeight="200.0" prefWidth="227.0">
+        <columns>
+        </columns>
+    </TableView>
+    <Button fx:id="oandaTest" text="Betöltés" onAction="#loadSummary"/>
+
+</VBox>
