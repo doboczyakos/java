@@ -13,10 +13,16 @@
         <Menu text="Párhuzamos">
             <MenuItem text="Párhuzamos" onAction="#loadParallelView"/>
         </Menu>
-        <Menu text="MNB Soap Kliens">
-            <MenuItem text="Letöltés 1" onAction="#loadDown1View"/>
-            <MenuItem text="Letöltés 1" onAction="#loadDown2View"/>
-            <MenuItem text="Grafikon" onAction="#loadGrafView"/>
+        <Menu text="Oanda">
+            <MenuItem text="Számla információk" onAction="#loadOandaView"/>
+            <MenuItem text="Deviza Párok" onAction="#loadDevizaView"/>
+            <MenuItem text="Deviza Historikus Párok" onAction="#loadDevizaOldView"/>
+            <MenuItem text="Pozició Nyitás" onAction="#loadOpenView"/>
+            <MenuItem text="Pozició Zárás" onAction="#loadCloseView"/>
+            <MenuItem text="Poziciók" onAction="#loadPositionsView"/>
+        </Menu>
+        <Menu text="MNB">
+            <MenuItem text="MNB Soap" onAction="#loadMnbView"/>
         </Menu>
     </MenuBar>
     <StackPane fx:id="contentPane">
