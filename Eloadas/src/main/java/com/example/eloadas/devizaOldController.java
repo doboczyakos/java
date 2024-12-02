@@ -76,16 +76,12 @@ public class devizaOldController {
 
     @FXML
     private void loadDevizaPar() throws ParseException {
-        //String aktualisAr=pricePolling.getPrice(devizaParok.getValue().toString());
 
         String aktualisAr=pricePolling.getOldPrice(devizaParok.getValue().toString(), startD,endD);
         eladas.setWrapText(true);
         eladas.setText(aktualisAr);
         ArrayList<Double> chartData=pricePolling.getChart(devizaParok.getValue().toString(), startD,endD);
 
-//        final NumberAxis xAxis = new NumberAxis();
-//        final NumberAxis yAxis = new NumberAxis();
-        // final LineChart<Number,Number> lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 
         devizaChart.setTitle(devizaParok.getValue().toString());
         XYChart.Series series = new XYChart.Series();

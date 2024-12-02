@@ -24,17 +24,13 @@ public class oandaController {
     @FXML private TableColumn<accountSummary,String> unrealized;
     @FXML private TableColumn<accountSummary,String> value ;
     @FXML private TableColumn<accountSummary,String> withdrawLimit ;
-
     @FXML
     private void loadSummary() {
-
         String token = "ebef36cadce744cb18dbbb91447c1d41-403b56730435d46c0d7c5386cba6505f";
         String account = "101-004-30457100-001";
-
         ObservableList<accountSummary> data = FXCollections.observableArrayList(
                 new accountSummary(token,account)
         );
-
         TableColumn userid = new TableColumn("Azonosito");
         userid.setCellValueFactory(new PropertyValueFactory<accountSummary,String>("account"));
 

@@ -10,10 +10,11 @@ import mnbSoap.MNBArfolyamServiceSoapImpl;
 
 public class mnbSoap{
 
+
+
     MNBArfolyamServiceSoapImpl impl;
     MNBArfolyamServiceSoap service;
     String filename;
-
 
     mnbSoap() {
         this.impl = new MNBArfolyamServiceSoapImpl();
@@ -26,12 +27,10 @@ public class mnbSoap{
         try {
             adatok=service.getCurrentExchangeRates();
         }catch (Exception e){
-
         }
         writeToFile(adatok);
         String result=adatok;
         return result;
-
     }
 
     public String letoltes2(String currency,String startDate,String endDate){
@@ -39,7 +38,6 @@ public class mnbSoap{
         try {
             adatok=service.getExchangeRates(startDate,endDate,currency);
         }catch (Exception e){
-
         }
         String result=adatok;
         writeToFile(adatok);

@@ -41,18 +41,38 @@ public class MainController {
     }
 
     @FXML
-    private void loadDown1View() throws Exception {
-        loadView("down1.fxml");
+    private void loadOandaView() throws Exception {
+        loadView("account.fxml");
     }
 
     @FXML
-    private void loadDown2View() throws Exception {
-        loadView("down2.fxml");
+    private void loadDevizaView() throws Exception {
+        loadView("devizapar.fxml");
     }
 
     @FXML
-    private void loadGrafView() throws Exception {
-        loadView("graf.fxml");
+    private void loadDevizaOldView() throws Exception {
+        loadView("devizaold.fxml");
+    }
+
+    @FXML
+    private void loadOpenView() throws Exception {
+        loadView("open.fxml");
+    }
+
+    @FXML
+    private void loadCloseView() throws Exception {
+        loadView("close.fxml");
+    }
+
+    @FXML
+    private void loadPositionsView() throws Exception {
+        loadView("positions.fxml");
+    }
+
+    @FXML
+    private void loadMnbView() throws Exception {
+        loadView("mnb.fxml");
     }
 
     private void loadView(String fxml) throws Exception {

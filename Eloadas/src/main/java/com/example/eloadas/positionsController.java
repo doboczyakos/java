@@ -109,10 +109,13 @@ public class positionsController {
         List<Trade> trades = ctx.trade.listOpen(config.ACCOUNTID).getTrades();
         ObservableList<positions> data= FXCollections.observableArrayList();
         for(Trade trade: trades) {
-            System.out.println(trade.getId() + "\t" + trade.getInstrument() + "\t" + trade.getOpenTime() + "\t" + trade.getCurrentUnits() + "\t" + trade.getPrice() + "\t" + trade.getUnrealizedPL());
+            System.out.println(trade.getId() + "\t" + trade.getInstrument() + "\t" + trade.getOpenTime() + "\t" +
+                    trade.getCurrentUnits() + "\t" + trade.getPrice() + "\t" + trade.getUnrealizedPL());
 
             data.add(
-                    new positions(Long.parseLong(trade.getId().toString()), trade.getInstrument().toString(), trade.getOpenTime().toString(), Long.parseLong(trade.getCurrentUnits().toString()), Double.parseDouble(trade.getPrice().toString()), Double.parseDouble(trade.getUnrealizedPL().toString()))
+                    new positions(Long.parseLong(trade.getId().toString()), trade.getInstrument().toString(), trade.getOpenTime().toString(),
+                            Long.parseLong(trade.getCurrentUnits().toString()), Double.parseDouble(trade.getPrice().toString()),
+                            Double.parseDouble(trade.getUnrealizedPL().toString()))
             );
         }
 
