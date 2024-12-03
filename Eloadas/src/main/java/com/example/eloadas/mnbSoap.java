@@ -1,5 +1,6 @@
 package com.example.eloadas;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -46,7 +47,8 @@ public class mnbSoap{
 
     void clearFile(){
         try {
-            FileWriter myWriter = new FileWriter(filename);
+            //File file=new File("c:\\adatok",filename);
+            FileWriter myWriter = new FileWriter(new File("c:\\adatok\\",filename));
             myWriter.write("");
             myWriter.close();
         } catch (IOException e) {
@@ -57,7 +59,7 @@ public class mnbSoap{
     void writeToFile(String adat){
         clearFile();
         try {
-            FileWriter myWriter = new FileWriter(filename);
+            FileWriter myWriter = new FileWriter("c:\\adatok\\"+filename);
             myWriter.write(adat);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");

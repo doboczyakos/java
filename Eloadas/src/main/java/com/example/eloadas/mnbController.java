@@ -47,23 +47,25 @@ public class mnbController {
 
     public void graf(){
         try {
-            File myObj = new File("MNB.txt");
+            File myObj = new File("c:\\adatok\\MNB.txt");
             Scanner myReader = new Scanner(myObj);
             String adatok="";
             while (myReader.hasNextLine()) {
                 adatok += myReader.nextLine();
                 //System.out.println(data);
             }
+            devizaChart.getData().clear();
             adatok=adatok.replace(",",".");
             String[] devizak=adatok.split("</Rate>");
             int runs=adatok.length()-3;
             System.out.println(runs);
             XYChart.Series series = new XYChart.Series();
-            for (int i = 0; i < devizak.length-1; i++) {
+            for (int i = devizak.length-2; i > -1; i--) {
                 String[] de=devizak[i].split(">");
                 series.getData().add(new XYChart.Data(i, Double.parseDouble(de[de.length-1])));
-
+                System.out.println(de[de.length-1]);
             }
+
             devizaChart.getData().add(series);
             xAxis.setAutoRanging(true);
             xAxis.setForceZeroInRange(false);
